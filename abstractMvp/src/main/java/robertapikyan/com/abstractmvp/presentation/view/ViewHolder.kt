@@ -1,4 +1,4 @@
-package com.robertapikyan.abstractmvp.presentation.view
+package robertapikyan.com.abstractmvp.presentation.view
 
 /**
  * This call is holder container for view.

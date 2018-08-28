@@ -1,4 +1,4 @@
-package com.robertapikyan.abstractmvp.presentation.presenter
+package robertapikyan.com.abstractmvp.presentation.presenter
 
 /**
  * IPresenterLifecycleHandler is responsible for presenter lifecycle handling

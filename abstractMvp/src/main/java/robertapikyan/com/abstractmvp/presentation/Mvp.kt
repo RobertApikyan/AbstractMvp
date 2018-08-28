@@ -1,13 +1,13 @@
-package com.robertapikyan.abstractmvp.presentation
+package robertapikyan.com.abstractmvp.presentation
 
-import com.robertapikyan.abstractmvp.presentation.presenter.IPresenterHolder
-import com.robertapikyan.abstractmvp.presentation.presenter.IPresenterLifecycleHandler
-import com.robertapikyan.abstractmvp.presentation.presenter.Presenter
-import com.robertapikyan.abstractmvp.presentation.presenter.PresenterProxy
-import com.robertapikyan.abstractmvp.presentation.view.IView
-import com.robertapikyan.abstractmvp.presentation.view.IViewActionDispatcher
-import com.robertapikyan.abstractmvp.presentation.view.IViewActionObserver
-import com.robertapikyan.abstractmvp.presentation.view.ViewHolder
+import robertapikyan.com.abstractmvp.presentation.presenter.IPresenterHolder
+import robertapikyan.com.abstractmvp.presentation.presenter.IPresenterLifecycleHandler
+import robertapikyan.com.abstractmvp.presentation.presenter.Presenter
+import robertapikyan.com.abstractmvp.presentation.presenter.PresenterProxy
+import robertapikyan.com.abstractmvp.presentation.view.IView
+import robertapikyan.com.abstractmvp.presentation.view.IViewActionDispatcher
+import robertapikyan.com.abstractmvp.presentation.view.IViewActionObserver
+import robertapikyan.com.abstractmvp.presentation.view.ViewHolder
 
 class Mvp {
 

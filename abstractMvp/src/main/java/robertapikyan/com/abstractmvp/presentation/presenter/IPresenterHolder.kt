@@ -1,6 +1,6 @@
-package com.robertapikyan.abstractmvp.presentation.presenter
+package robertapikyan.com.abstractmvp.presentation.presenter
 
-import com.robertapikyan.abstractmvp.presentation.view.IView
+import robertapikyan.com.abstractmvp.presentation.view.IView
 
 /**
  * IPresenterHolder represent's holder container for Presenter instance,

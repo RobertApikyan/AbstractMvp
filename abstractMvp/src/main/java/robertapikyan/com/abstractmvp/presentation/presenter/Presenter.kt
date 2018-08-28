@@ -1,7 +1,7 @@
-package com.robertapikyan.abstractmvp.presentation.presenter
+package robertapikyan.com.abstractmvp.presentation.presenter
 
-import com.robertapikyan.abstractmvp.presentation.view.IView
-import com.robertapikyan.abstractmvp.presentation.view.IViewActionDispatcher
+import robertapikyan.com.abstractmvp.presentation.view.IView
+import robertapikyan.com.abstractmvp.presentation.view.IViewActionDispatcher
 
 /**
  * Presenter, receive view action dispatcher instance via setViewActionObserver lifecycle method

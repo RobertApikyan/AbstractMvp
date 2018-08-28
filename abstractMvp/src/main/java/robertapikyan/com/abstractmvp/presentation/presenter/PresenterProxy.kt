@@ -1,6 +1,6 @@
-package com.robertapikyan.abstractmvp.presentation.presenter
+package robertapikyan.com.abstractmvp.presentation.presenter
 
-import com.robertapikyan.abstractmvp.presentation.view.ViewHolder
+import robertapikyan.com.abstractmvp.presentation.view.ViewHolder
 
 internal class PresenterProxy(
         private val presenterLifecycle: IPresenterLifecycle) : IPresenterLifecycle {

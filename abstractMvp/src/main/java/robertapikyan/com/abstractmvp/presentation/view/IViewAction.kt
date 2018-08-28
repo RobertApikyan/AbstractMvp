@@ -1,4 +1,4 @@
-package com.robertapikyan.abstractmvp.presentation.view
+package robertapikyan.com.abstractmvp.presentation.view
 
 /**
  * Base view action,
