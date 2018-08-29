@@ -118,6 +118,63 @@ To get presenter instance call ```Mvp.from(factory:Factory<V,P>)``` method and p
  
 #### AbstractMvp is The abstraction layer for MVP arctecture. It provides the base structure for MVP and allow to define custom MVP implementation.
 
+## Download
+### Gradle 
+#### Add to project level build.gradle
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+#### Add dependency to app module level build.gradle
+```groovy
+dependencies {
+    implementation 'com.github.RobertApikyan:AbstractMvp:0.0.1'
+}
+```
+### Maven
+```xml
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+#### Add dependency
+```xml
+	<dependency>
+	    <groupId>com.github.RobertApikyan</groupId>
+	    <artifactId>AbstractMvp</artifactId>
+	    <version>0.0.1</version>
+	</dependency>ø
+```
+
+ 
+### Done.
+
+[![View Robert Apikyan profile on LinkedIn](https://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png)](https://www.linkedin.com/in/robert-apikyan-24b915130/)
+
+License
+-------
+
+    Copyright 2017 Robert Apikyan
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
 
 
 
