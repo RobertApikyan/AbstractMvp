@@ -109,6 +109,11 @@ PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://gith
 ```
 PresenterLifecycleHandler's implementation can be done with custom activity lifeycle callback mechanism or it will be more easy to implement with a Lifecycle component from Android arc. components.
 
+### BINDING ALL TOGETHER 
+
+AbstractMvp library provides (Mvp.Factory<V:IView, P:Presenter<V>>)[https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/Mvp.kt] genric interface 
+
+
 
 
 
