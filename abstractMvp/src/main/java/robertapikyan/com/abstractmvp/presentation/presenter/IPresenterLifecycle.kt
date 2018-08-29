@@ -6,7 +6,7 @@ package robertapikyan.com.abstractmvp.presentation.presenter
 interface IPresenterLifecycle {
 
     /**
-     * onViewAttach, will be called with activity setViewActionObserver
+     * onViewAttach, will be called with activity onCreate
      */
     fun onViewAttach()
 
