@@ -85,7 +85,7 @@ PresenterHolder is a generic interface [```IPresenterHolder<V : IView, P : Prese
 
 ### PresenterLifecycleHandler
 
-PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt) with one method ```onCreate(presenterLifecycle: (IPresenterLifecycle)[https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycle.kt])```)[https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt]
+PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt) with one method ```[onCreate(presenterLifecycle: [IPresenterLifecycle](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycle.kt))```](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt)
 
 
 
