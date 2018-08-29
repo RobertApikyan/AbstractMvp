@@ -150,7 +150,7 @@ dependencies {
 	    <groupId>com.github.RobertApikyan</groupId>
 	    <artifactId>AbstractMvp</artifactId>
 	    <version>1.0.0</version>
-	</dependency>ø
+	</dependency>
 ```
 
  
