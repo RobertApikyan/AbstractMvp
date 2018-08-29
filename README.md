@@ -85,7 +85,29 @@ PresenterHolder is a generic interface [```IPresenterHolder<V : IView, P : Prese
 
 ### PresenterLifecycleHandler
 
-PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt) with one method ```onCreate(presenterLifecycle: [IPresenterLifecycle](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycle.kt))```
+PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt) with one method ```onCreate(presenterLifecycle: IPresenterLifecycle)```. This method is calling by framework. Here we receive [presenterLifecycle](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycle.kt) instance, which has four methods 
+```kotlin
+    /**
+     * onViewAttach, will be called with activity setViewActionObserver
+     */
+    fun onViewAttach()
+
+    /**
+     * onViewStop, will be called with activity onStart
+     */
+    fun onViewStart()
+
+    /**
+     * onViewStop, will be called with activity onStop
+     */
+    fun onViewStop()
+
+    /**
+     * onViewDetach, will be called with activity onDestroy
+     */
+    fun onViewDetach()
+```
+
 
 
 
