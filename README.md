@@ -116,7 +116,7 @@ To get presenter instance call ```Mvp.from(factory:Factory<V,P>)``` method and p
 
 ## SUMMARY
  
-#### AbstractMvp is The abstraction layer for MVP arctecture. It provides the base structure for MVP arcitecture. You can implement from it's abstract components and define your MVP implementation.
+#### AbstractMvp is The abstraction layer for MVP arctecture. It provides the base structure for MVP and allow to define custom MVP implementation.
 
 
 
