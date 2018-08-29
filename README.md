@@ -19,20 +19,20 @@ Usually presenter instance is inside our viewController (Activity or Fragment), 
 
 ## ABSTRACT MVP WORKING MECHANISM 
 
-Here we have View interface that is implemented by viewController (Activity or Fragment) and Presenter. View contains some methods methodA(), methodB(), ... methodN() that are implemented by viewController. After doing some background jobs, presenter needs to call view.methodB() in order to notify UI about new changes. 
+Here we have a View interface that is implemented by viewController (Activity or Fragment) and a Presenter. View contains some methods methodA(), methodB(), ... methodN() that are implemented by viewController. When presneter getting created, it start some background jobs, after finishing them, it needs to notify UI about new changes by calling view.methodB() method. Below is the rough description of steps how it will be done. 
 
 ![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/master/intro/structure.png?raw=true)
 
-1. Presenter creates new ViewAction closure with methodB() and send it via ViewActionDispatcher. Code snippet will look like this 
+1. Presenter creates new ViewAction closure with methodB() and send it via ViewActionDispatcher. Code snippet with Kotlin will look like this
 ```kotlin
-// Create ViewAction for methodB
+// Create the ViewAction for methodB
 val actionMethodB = IViewAction.fromLambda() { view ->
   view.methodB()
 }
- // send view action
+ // Notify viewActionDispatcher about actionMethodB
 viewActionDispatcher.onViewAction(actionMethodB)
 ```
-2. ViewActionDispatcher will send the viewAction to ViewActionObserver, which contains view instance. Depending on ViewActionDispatcher implementation, it can cache viewActions if the view is detached, and send them when the view will become attached again.
+2. ViewActionDispatcher will send the viewAction to ViewActionObserver, which contains view instance. Depending from ViewActionDispatcher implementation, viewActions can be cached, if the view is detached, and will be sent when the view will become attached again.
 ```kotlin 
 // Sending actionMethodB to ViewActionObserver 
 viewActionObserver.onInvoke(actionMethodB)
@@ -43,7 +43,7 @@ viewActionObserver.onInvoke(actionMethodB)
 val view = viewHolder.get() // recieving view instance
 actionMethodB.invoke(view) // executing actionMehtodB ViewAction
 ```
-4. When actionMethodB is getting executed the methodB() will be called on our viewController (Activity or Fragment)
+4. When actionMethodB is getting executed, the methodB() will be called on our viewController (Activity or Fragment)
 
 
 
