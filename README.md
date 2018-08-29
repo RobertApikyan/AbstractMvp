@@ -80,6 +80,7 @@ Second one is ```onInvoke(viewAction: IViewAction<V>)``` this method is calling 
 
 ### PresenterHolder
 
+PresenterHolder is a generic interface [```IPresenterHolder<V : IView, P : Presenter<V>>```](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterHolder.kt) with tree methods (put, get, hasPresenter). All this methods are going to be called by framework. The main point of this container class is to make presenter instance persistence from viewController lifecycle scope. This Interface can be implemented with Android Loaders api or with ViewModels from Android arc. components.
 
 
 
