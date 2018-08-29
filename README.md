@@ -114,8 +114,9 @@ PresenterLifecycleHandler's implementation can be done with custom activity life
 AbstractMvp library provides [Mvp.Factory<V:IView, P:Presenter<V>>](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/Mvp.kt) genric interface. Factory class must implement from [Mvp.Factory<V:IView, P:Presenter<V>>](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/Mvp.kt)  and override all methods and returns already implemented componens. 
 To get presenter instance call ```Mvp.from(factory:Factory<V,P>)``` method and pass your factory instance. 
 
-
-This library is The abstraction for MVP arctecture, You can implemented it and create your custom MVP arc. implementation.
+## SUMMARY
+ 
+#### AbstractMvp is The abstraction layer for MVP arctecture. It provides the base structure for MVP arcitecture. You can implement from it's abstract components and define your MVP implementation.
 
 
 
