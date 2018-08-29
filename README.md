@@ -23,7 +23,7 @@ Here we have View interface that is implemented by viewController (Activity or F
 
 ![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/master/intro/structure.png?raw=true)
 
-1. It creates new ViewAction closure with methodB() and send it via ViewActionDispatcher. The code snippet will look like this 
+1. Presenter creates new ViewAction closure with methodB() and send it via ViewActionDispatcher. Code snippet will look like this 
 ```kotlin
 // Create ViewAction for methodB
 val actionMethodB = IViewAction.fromLambda() { view ->
@@ -33,8 +33,17 @@ val actionMethodB = IViewAction.fromLambda() { view ->
 viewActionDispatcher.onViewAction(actionMethodB)
 ```
 2. ViewActionDispatcher will send the viewAction to ViewActionObserver, which contains view instance.
-
-3. ViewActionObserver executes viewAction
+```kotlin 
+// Sending actionMethodB to ViewActionObserver 
+viewActionObserver.onInvoke(actionMethodB)
+```
+3. After receiving actionMethodB instance, ViewActionObserver executes it by passing the view instance. 
+```kotlin
+// Executing actionMethodB inside ViewActionObserver
+val view = viewHolder.get() // recieving view instance
+actionMethodB.invoke(view) // executing actionMehtodB ViewAction
+```
+4. When actionMethodB is getting executed the methodB will be called in our viewController (Activity or Fragment)
 
 
 
