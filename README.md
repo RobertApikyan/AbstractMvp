@@ -11,7 +11,7 @@ AbstractMvp is library that provides abstract components for MVP arcitecture rea
 #### Nullable View instance
 In classic MVP realisation we attach the view instance to the presenter and detach it when view is going to be destroyed, so at some point the view instance inside presenter will be null and every time before accessing the view instance we need to make null check, in order to avoid NullPointerException. This behavior is secure, but it requires additional null checkings. To overcome with this, AbstractMvp library provides ViewActions, which are closures, that will be executed only when the view is not null. (later, detailed about ViewAction).
 
-#### Losted UI updates
+#### Lost UI updates
 After doing some background jobs presenter needs to update ui, but at that point view instance is null. Since view is null, the ui updates will not be executed. AbstractMvp provides ViewActionDispatcher as a solution, which is another abstraction layer and it knows when the view is attached or not, and if it is not attached the viewAction will be cached inside ViewActionDipatcher, and executed when view become attached again (later, detailed about ViewActionDipatcher)
 
 #### Not Persistence Presenter
@@ -46,8 +46,29 @@ actionMethodB.invoke(view) // executing actionMehtodB ViewAction
 4. When actionMethodB is getting executed, the methodB() will be called on our viewController (Activity or Fragment)
 
 ## ABSTRACT MVP MAIN COMPONENTS 
-Abstract MVP realization requires 
-#### Losted UI updates
+Abstract MVP is consist from a several abstract components, that need to be implemented. Here is the list of them
+
+### Components That are related with View
+#### 1. ViewAction
+#### 2. ViewActionDispatcher
+#### 3. ViewActionObserver
+### Components That are related with Presenter
+#### 1. PresenterHolder
+#### 2. PresenterLifecycleHandler
+
+Lets Discuss them separatly.
+
+### ViewAction
+
+ViewAction is a generic interface [IViewAction](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/view/IViewAction.kt) with single method invoke(view: V) where V is the generic type that is inherited from the base IView interface. ViewActions are created inside presnter and passing to viewActionDispatcher and ViewActionObserver calls invoke(view: V) method.
+
+### ViewActionDispatcher
+
+VeiwActionDipatcher is a generic interface [IViewActionDispatcher](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/view/IViewActionDispatcher.kt) is responsible for viewActions delivery to ViewActionObserver. 
+
+
+
+
 
 
 
