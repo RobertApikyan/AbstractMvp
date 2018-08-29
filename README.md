@@ -1,4 +1,4 @@
-![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/develop/master/intro/cover.png?raw=true)
+![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/develop/intro/cover.png?raw=true)
 
 ### MinSDK 14+
 
