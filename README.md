@@ -21,7 +21,7 @@ Usually presenter instance is inside our viewController (Activity or Fragment), 
 
 Here we have a View interface that is implemented by viewController (Activity or Fragment) and a Presenter. View contains some methods methodA(), methodB(), ... methodN() that are implemented by viewController. When presneter getting created, it start some background jobs, after finishing them, it needs to notify UI about new changes by calling view.methodB() method. Below is the rough description of steps how it will be done. 
 
-![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/master/intro/structure.png?raw=true)
+![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/develop/intro/structure.png?raw=true)
 
 1. Presenter creates new ViewAction closure with methodB() and send it via ViewActionDispatcher. Code snippet with Kotlin will look like this
 ```kotlin
