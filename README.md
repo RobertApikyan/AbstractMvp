@@ -88,7 +88,7 @@ PresenterHolder is a generic interface [```IPresenterHolder<V : IView, P : Prese
 PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycleHandler.kt) with one method ```onCreate(presenterLifecycle: IPresenterLifecycle)```. This method is calling by framework. Here we receive [presenterLifecycle](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/presenter/IPresenterLifecycle.kt) instance, which has four methods 
 ```kotlin
     /**
-     * onViewAttach, will be called with activity setViewActionObserver
+     * onViewAttach, will be called with activity onCreate
      */
     fun onViewAttach()
 
@@ -107,6 +107,7 @@ PresenterLifecycleHandler an interface [IPresenterLifecycleHandler](https://gith
      */
     fun onViewDetach()
 ```
+PresenterLifecycleHandler's implementation can be done with custom activity lifeycle callback mechanism or it will be more easy to implement with a Lifecycle component from Android arc. components.
 
 
 
