@@ -32,7 +32,7 @@ val actionMethodB = IViewAction.fromLambda() { view ->
  // send view action
 viewActionDispatcher.onViewAction(actionMethodB)
 ```
-2. ViewActionDispatcher will send the viewAction to ViewActionObserver, which contains view instance.
+2. ViewActionDispatcher will send the viewAction to ViewActionObserver, which contains view instance. Depending on ViewActionDispatcher implementation, it can cache viewActions if the view is detached, and send them when the view will become attached again.
 ```kotlin 
 // Sending actionMethodB to ViewActionObserver 
 viewActionObserver.onInvoke(actionMethodB)
@@ -43,7 +43,7 @@ viewActionObserver.onInvoke(actionMethodB)
 val view = viewHolder.get() // recieving view instance
 actionMethodB.invoke(view) // executing actionMehtodB ViewAction
 ```
-4. When actionMethodB is getting executed the methodB will be called in our viewController (Activity or Fragment)
+4. When actionMethodB is getting executed the methodB() will be called on our viewController (Activity or Fragment)
 
 
 
