@@ -45,6 +45,10 @@ actionMethodB.invoke(view) // executing actionMehtodB ViewAction
 ```
 4. When actionMethodB is getting executed, the methodB() will be called on our viewController (Activity or Fragment)
 
+## ABSTRACT MVP MAIN COMPONENTS 
+Abstract MVP realization requires 
+#### Losted UI updates
+
 
 
 
