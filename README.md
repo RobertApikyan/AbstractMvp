@@ -64,8 +64,11 @@ ViewAction is a generic interface [IViewAction](https://github.com/RobertApikyan
 
 ### ViewActionDispatcher
 
-VeiwActionDipatcher is a generic interface [IViewActionDispatcher](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/view/IViewActionDispatcher.kt) is responsible for viewActions delivery to ViewActionObserver. 
-
+VeiwActionDipatcher is a generic interface [IViewActionDispatcher](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/view/IViewActionDispatcher.kt), which is responsible for viewActions delivery to ViewActionObserver where V is the generic type that is inherited from the base IView interface. This interface contains two methods. 
+First one is ``` setViewActionObserver(viewHolder: ViewHolder<V>, viewActionObserver: IViewActionObserver<V>) ``` which is called every time when new view is attached. With First argument viewholder we can get view instance by calling viewHolder.get() method. When the viewController will be destroyed view instance will be automatically removed from viewHolder container. Second argument is viewActionObserver instance. We can send view actions to viewActionObserver by calling viewActionObserver.onInvoke(viewAction) and passing viewAction instance.
+Second method is ``` onViewAction(actionType: ActionType, viewAction: IViewAction<V>) ```, which is calling from presenter, every time when we need to pass new viewAction. [ActionType](https://github.com/RobertApikyan/AbstractMvp/blob/master/abstractMvp/src/main/java/robertapikyan/com/abstractmvp/presentation/view/ActionType.kt) is an enum with values are STICKY and IMMEDIATE. Here is the difference 
+STICKY - When viewActionDispatcher receives viewActions and in that time the view is detached, the viewActions will be added in to queue and delivered when the view will become attached again.
+IMMEDIATE - ViewActions will be delivered only if view is attached. If view is detached action will be lost
 
 
 
