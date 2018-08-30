@@ -120,7 +120,9 @@ To get presenter instance call ```Mvp.from(factory:Factory<V,P>)``` method and p
 
 ## SUMMARY
  
-#### AbstractMvp is The abstraction layer for MVP architecture. It provides the base structure for MVP and allow to define custom MVP implementation.
+#### AbstractMvp is The abstraction layer for MVP architecture. It provides the base structure for MVP and allow to define custom MVP implementation. 
+
+## (AbstractMvp Implementation With Android Arcitecture components)[https://github.com/RobertApikyan/LifecycleMvp]
 
 ## Download
 ### Gradle 
