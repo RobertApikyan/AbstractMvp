@@ -1,6 +1,7 @@
 ![N|Solid](https://github.com/RobertApikyan/AbstractMvp/blob/develop/intro/cover.png?raw=true)
 
 ### MinSDK 14+
+[![](https://jitpack.io/v/RobertApikyan/AbstractMvp.svg)](https://jitpack.io/#RobertApikyan/AbstractMvp)
 
 ## AbstractMvp
 
