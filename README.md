@@ -163,7 +163,7 @@ dependencies {
  
 ### Done.
 
-[![View Robert Apikyan profile on LinkedIn] (https://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png)](https://www.linkedin.com/in/robert-apikyan-24b915130/)
+[![View Robert Apikyan profile on LinkedIn](https://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png)](https://www.linkedin.com/in/robert-apikyan-24b915130/)
 
 License
 -------
