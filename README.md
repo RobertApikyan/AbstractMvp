@@ -139,7 +139,7 @@ allprojects {
 #### Add dependency to app module level build.gradle
 ```groovy
 dependencies {
-    implementation 'com.github.RobertApikyan:AbstractMvp:1.0.2'
+    implementation 'com.github.RobertApikyan:AbstractMvp:1.0.3'
 }
 ```
 ### Maven
@@ -156,7 +156,7 @@ dependencies {
 <dependency>
 	<groupId>com.github.RobertApikyan</groupId>
 	<artifactId>AbstractMvp</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 </dependency>
 ```
 
