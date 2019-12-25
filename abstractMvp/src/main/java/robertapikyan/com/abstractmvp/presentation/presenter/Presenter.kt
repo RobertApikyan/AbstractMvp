@@ -74,6 +74,12 @@ abstract class Presenter<V : IView> : IPresenterLifecycle {
     override fun onViewDetach() {}
 
     /**
+     * onDestroy, will be called with activity onDestroy, when the activity will not be recreated.
+     * Clean resources here
+     */
+    open fun onDestroy(){}
+
+    /**
      * If viewActionDispatcher is not initialized yet, IllegalStateException will be thrown, in order
      * to indicate that viewActionDispatcher is get accessed before presenter::onCreate method call.
      * Usually This is happening when viewActionDispatcher is get accessed from
