@@ -15,17 +15,14 @@ abstract class Presenter<V : IView> : IPresenterLifecycle {
      */
     interface Factory<V : IView, P : Presenter<V>> {
 
-        val presenterKey: Any
-
         fun createPresenter(): P
 
         companion object {
             /**
              * Presenter Factory, with lambda expression
              */
-            fun <V : IView, P : Presenter<V>> fromLambda(presenterKey: String, factory: () -> P) = object : Factory<V, P> {
+            fun <V : IView, P : Presenter<V>> fromLambda(factory: () -> P) = object : Factory<V, P> {
                 override fun createPresenter() = factory()
-                override val presenterKey: String get() = presenterKey
             }
         }
     }
