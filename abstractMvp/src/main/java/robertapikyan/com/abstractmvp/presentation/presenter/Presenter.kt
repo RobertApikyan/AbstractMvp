@@ -15,14 +15,17 @@ abstract class Presenter<V : IView> : IPresenterLifecycle {
      */
     interface Factory<V : IView, P : Presenter<V>> {
 
+        val presenterKey: Any
+
         fun createPresenter(): P
 
         companion object {
             /**
              * Presenter Factory, with lambda expression
              */
-            fun <V : IView, P : Presenter<V>> fromLambda(factory: () -> P) = object : Factory<V, P> {
+            fun <V : IView, P : Presenter<V>> fromLambda(presenterKey: String, factory: () -> P) = object : Factory<V, P> {
                 override fun createPresenter() = factory()
+                override val presenterKey: String get() = presenterKey
             }
         }
     }
@@ -77,7 +80,7 @@ abstract class Presenter<V : IView> : IPresenterLifecycle {
      * onDestroy, will be called with activity onDestroy, when the activity will not be recreated.
      * Clean resources here
      */
-    open fun onDestroy(){}
+    open fun onDestroy() {}
 
     /**
      * If viewActionDispatcher is not initialized yet, IllegalStateException will be thrown, in order
