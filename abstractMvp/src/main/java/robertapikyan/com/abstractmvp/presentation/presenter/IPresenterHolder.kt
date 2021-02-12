@@ -10,7 +10,7 @@ import robertapikyan.com.abstractmvp.presentation.view.IView
  * Loaders and ViewModels and every time provide the same presenter instance
  */
 interface IPresenterHolder<V : IView, P : Presenter<V>> {
-    fun hasPresenter(): Boolean
-    fun put(presenter: P)
-    fun get(): P
+    fun hasPresenter(presenterKey:Any): Boolean
+    fun put(presenterKey:Any,presenter: P)
+    fun get(presenterKey:Any): P
 }

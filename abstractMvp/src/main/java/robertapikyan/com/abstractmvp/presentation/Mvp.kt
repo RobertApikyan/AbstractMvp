@@ -22,6 +22,7 @@ class Mvp {
         fun getViewActionDispatcher(): IViewActionDispatcher<V>
         fun getViewActionObserver(): IViewActionObserver<V>
         fun getPresenter(): P
+        fun getPresenterKey():Any
         fun getPresenterHolder(): IPresenterHolder<V, P>
         fun getPresenterLifecycleHandler(): IPresenterLifecycleHandler
     }
@@ -37,9 +38,10 @@ class Mvp {
             val viewHolder = ViewHolder<V>()
 
             // Presenter
+            val presenterKey = factory.getPresenterKey()
             val presenter by lazy { factory.getPresenter() }
             val presenterHolder = factory.getPresenterHolder()
-            val presenterProxy by lazy { PresenterProxy(presenterHolder.get()) }
+            val presenterProxy by lazy { PresenterProxy(presenter) }
             val presenterLifecycleHandler by lazy { factory.getPresenterLifecycleHandler() }
 
             // Action dispatcher and observable
@@ -47,11 +49,11 @@ class Mvp {
             val viewActionDispatcher by lazy { factory.getViewActionDispatcher() }
 
             // holds state whatever presenter is created or restored
-            val isPresenterCreated = !presenterHolder.hasPresenter()
+            val hasStoredPresenter = presenterHolder.hasPresenter(presenterKey)
 
             // if holder is empty, we create new presenter instance
-            if (!presenterHolder.hasPresenter()) {
-                presenterHolder.put(presenter)
+            if (!hasStoredPresenter) {
+                presenterHolder.put(presenterKey,presenter)
             }
 
             // set the viewHolder instance,
@@ -65,24 +67,24 @@ class Mvp {
 
             viewActionObserver.onCreate(viewHolder)
 
-            // now if presenter is created we set viewActionObserver instance to viewActionDispatcher,
-            // pass the viewActionDispatcher instance to presenter,
-            // and call presenter.onCreate(). At this point presenter is ready
-            if (isPresenterCreated) {
+            if (hasStoredPresenter) {
+                // if presenter instance is restored, we just set viewActionObserver to viewActionDispatcher,
+                // and call presenter.onRestore()
+                val storedPresenter = presenterHolder.get(presenterKey)
+                storedPresenter._viewActionDispatcher
+                        .setViewActionObserver(viewHolder, viewActionObserver)
+                storedPresenter.onRestore()
+            } else {
+                // if presenter is created we set viewActionObserver instance to viewActionDispatcher,
+                // pass the viewActionDispatcher instance to presenter,
+                // and call presenter.onCreate(). At this point presenter is ready
                 viewActionDispatcher.setViewActionObserver(viewHolder, viewActionObserver)
                 presenter._viewActionDispatcher = viewActionDispatcher
                 presenter.onCreate()
-            } else {
-                // if presenter instance is restored, we just set viewActionObserver to viewActionDispatcher,
-                // and call presenter.onRestore()
-                presenterHolder.get()
-                        ._viewActionDispatcher
-                        .setViewActionObserver(viewHolder, viewActionObserver)
-                presenterHolder.get().onRestore()
             }
 
             // return the presenter instance
-            return presenterHolder.get()
+            return presenterHolder.get(presenterKey)
         }
     }
 }
